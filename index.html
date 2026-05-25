@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tina Awodola — Videographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cherry: #be0038;
+      --cherry-deep: #8c0028;
+      --cherry-light: #fdf0f3;
+      --cherry-mid: #f0b8c8;
+      --lilac: #c8b4e8;
+      --lilac-deep: #7c5fa0;
+      --lilac-soft: #f3eef9;
+      --lilac-mid: #d9cef0;
+      --off-white: #faf8fc;
+      --ink: #1a1020;
+      --muted: #9080a8;
+      --faint: #e2d8ed;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --max: 1200px;
+      --pad: clamp(24px, 5vw, 80px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--off-white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 248, 252, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 0.5px solid var(--faint);
+      padding: 0 var(--pad);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover {
+      color: var(--cherry);
+    }
+
+    .nav-ig {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--cherry-light);
+      color: var(--cherry) !important;
+      border: 0.5px solid var(--cherry-mid);
+      transition: background 0.2s, transform 0.15s !important;
+    }
+
+    .nav-ig:hover {
+      background: var(--cherry-mid) !important;
+      transform: scale(1.05);
+    }
+
+    .nav-ig svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: clamp(56px, 8vw, 120px) var(--pad) clamp(48px, 7vw, 96px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-blob {
+      position: absolute;
+      top: -80px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: var(--lilac-soft);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-blob-2 {
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--cherry-light);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--cherry-light);
+      border: 0.5px solid var(--cherry-mid);
+      border-radius: 100px;
+      padding: 5px 16px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cherry);
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    .hero-pill span {
+      font-size: 11px;
+      color: var(--cherry-deep);
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--cherry);
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.6vw, 17px);
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 480px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--cherry);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      padding: 14px 28px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+      background: var(--cherry-deep);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 0.5px solid var(--lilac-mid);
+      border-radius: 100px;
+      padding: 14px 28px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--lilac);
+      background: var(--lilac-soft);
+      transform: translateY(-2px);
+    }
+
+    /* ─── SHOWREEL ─── */
+    .showreel-section {
+      padding: 0 var(--pad) clamp(48px, 7vw, 96px);
+    }
+
+    .showreel-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .reel-label {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .reel-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 0.5px solid var(--faint);
+      background: var(--lilac-soft);
+    }
+
+    /* Mobile: portrait 9/16 */
+    .reel-wrap iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9/16;
+      border: none;
+    }
+
+    /* Desktop: cap width and center */
+
+    /* ─── SECTION HEADER ─── */
+    .section-label {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: var(--faint);
+    }
+
+    /* ─── WORK ─── */
+    .work-section {
+      padding: 0 var(--pad) clamp(48px, 7vw, 96px);
+    }
+
+    .work-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .case-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 0.5px solid var(--faint);
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--lilac-mid);
+      box-shadow: 0 12px 40px rgba(200, 180, 232, 0.18);
+    }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/16;
+      background: var(--lilac-soft);
+      overflow: hidden;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+    }
+
+    .video-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.4s ease;
+    }
+
+    .video-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 10, 30, 0.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.3s;
+    }
+
+    .video-wrap:hover .video-overlay {
+      background: rgba(20, 10, 30, 0.18);
+    }
+
+    .play-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .video-wrap:hover .play-btn {
+      transform: scale(1.1);
+      background: #fff;
+    }
+
+    .play-btn svg {
+      width: 20px;
+      height: 20px;
+      margin-left: 3px;
+      color: var(--cherry);
+    }
+
+    .play-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .case-body {
+      padding: 20px 20px 18px;
+    }
+
+    .case-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .case-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .case-date {
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-left: 10px;
+      padding-top: 5px;
+    }
+
+    .case-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .case-footer {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .case-badge {
+      background: var(--cherry-light);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--cherry-deep);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border: 0.5px solid var(--cherry-mid);
+    }
+
+    .case-client {
+      font-size: 12px;
+      color: #b8a8cc;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--faint);
+    }
+
+    /* ─── ABOUT ─── */
+    .about-section {
+      padding: clamp(44px, 7vw, 96px) var(--pad);
+    }
+
+    .about-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
+      margin-top: 0;
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center 8%;
+      border-radius: 50%;
+      display: block;
+      border: 4px solid #fff;
+      outline: 2px solid var(--cherry-mid);
+      flex-shrink: 0;
+    }
+
+    .about-photo-accent {
+      display: none;
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-name {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .about-location {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 22px;
+    }
+
+    .about-location svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      color: var(--cherry);
+    }
+
+    .about-bio {
+      font-size: clamp(15px, 1.5vw, 16px);
+      color: #5a4870;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .about-bio-2 {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .about-tag {
+      background: var(--lilac-soft);
+      border: 0.5px solid var(--lilac-mid);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      color: var(--lilac-deep);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-section {
+      padding: clamp(44px, 7vw, 96px) var(--pad);
+      background: var(--cherry-light);
+      border-top: 0.5px solid var(--cherry-mid);
+    }
+
+    .contact-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .contact-heading em {
+      font-style: italic;
+      color: var(--cherry);
+    }
+
+    .contact-sub {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    .contact-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-btns .btn-primary {
+      text-align: center;
+    }
+
+    .contact-btns .btn-outline {
+      background: #fff;
+      border-color: var(--cherry-mid);
+      text-align: center;
+    }
+
+    .contact-btns .btn-outline:hover {
+      background: var(--cherry-light);
+      border-color: var(--cherry);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 22px var(--pad);
+      border-top: 0.5px solid var(--faint);
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: #b8a8cc;
+      font-style: italic;
+    }
+
+    .footer-loc {
+      font-size: 12px;
+      color: #c8b8d8;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ─────────────────────────────────────
+       TABLET  ≥ 640px
+    ───────────────────────────────────── */
+    @media (min-width: 640px) {
+      .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .contact-btns {
+        flex-direction: row;
+      }
+
+      .contact-btns .btn-primary,
+      .contact-btns .btn-outline {
+        flex: 1;
+      }
+    }
+
+    /* ─────────────────────────────────────
+       DESKTOP  ≥ 960px
+    ───────────────────────────────────── */
+    @media (min-width: 960px) {
+
+      /* Hero: text left, showreel right */
+      .hero-inner {
+        grid-template-columns: 1fr 400px;
+        gap: 60px;
+      }
+
+      /* Inline showreel into hero on desktop */
+      .showreel-section {
+        display: none;
+      }
+
+      .hero-reel {
+        display: block !important;
+      }
+
+      /* 3-col work grid, all equal */
+      .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /* About: photo left, text right */
+      .about-grid {
+        grid-template-columns: 220px 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .about-photo-wrap {
+        justify-content: flex-start;
+      }
+
+      /* Contact: text left, buttons right */
+      .contact-grid {
+        grid-template-columns: 1fr 360px;
+        gap: 80px;
+      }
+
+      .contact-btns {
+        flex-direction: column;
+      }
+
+      .contact-btns .btn-primary,
+      .contact-btns .btn-outline {
+        flex: none;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .about-grid {
+        grid-template-columns: 240px 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Tina Awodola</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.instagram.com/tinaawodola" target="_blank" rel="noopener" class="nav-ig"
+          aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blob"></div>
+    <div class="hero-blob-2"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <div class="hero-pill-dot"></div>
+          <span>Videographer · Beauty &amp; Lifestyle</span>
+        </div>
+        <h1>Beauty stories<br><em>brought to life</em></h1>
+        <p class="hero-sub">London-based videographer crafting cinematic content for beauty, skincare, and lifestyle
+          brands.</p>
+        <div class="hero-btns">
+          <a href="#work" class="btn-primary">View Work</a>
+          <a href="#contact" class="btn-outline">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- Desktop inline showreel (hidden on mobile, shown via media query) -->
+      <div class="hero-reel" style="display:none; animation: fadeUp 0.7s 0.4s ease both;">
+        <a class="video-wrap" href="https://www.instagram.com/reel/DPL1uZHCDGO/" target="_blank" rel="noopener"
+          aria-label="Watch Tina Awodola Showreel H1 2025 on Instagram" style="border-radius: 20px;">
+          <img src="thumb-showreel.jpg" alt="Tina Awodola showreel 2025 — beauty and lifestyle videography">
+          <div class="video-overlay">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <span class="play-label">Watch Showreel</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWREEL (mobile only — hidden on desktop via CSS) -->
+  <section class="showreel-section">
+    <div class="showreel-inner">
+      <p class="reel-label">Showreel · H1 2025</p>
+      <a class="video-wrap reel-wrap" href="https://www.instagram.com/reel/DPL1uZHCDGO/" target="_blank" rel="noopener"
+        aria-label="Watch Tina Awodola Showreel H1 2025 on Instagram">
+        <img src="thumb-showreel.jpg" alt="Tina Awodola showreel 2025 — beauty and lifestyle videography">
+        <div class="video-overlay">
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <span class="play-label">Watch Showreel</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work-section" id="work">
+    <div class="work-inner">
+      <p class="section-label">Selected Work</p>
+      <div class="work-grid">
+
+        <article class="case-card">
+          <a class="video-wrap" href="https://www.instagram.com/reel/DYl8xUGoepy/" target="_blank" rel="noopener"
+            aria-label="Watch Yanga Beauty brush set product launch on Instagram">
+            <img src="thumb-blush.jpg" alt="Yanga Beauty brush set product launch — vibrant purple makeup brushes">
+            <div class="video-overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <span class="play-label">Watch on Instagram</span>
+            </div>
+          </a>
+          <div class="case-body">
+            <div class="case-meta">
+              <h2 class="case-title">Brush Set Launch</h2>
+              <span class="case-date">2026</span>
+            </div>
+            <p class="case-desc">A bold, colour-forward product launch film for Yanga Beauty's new brush collection —
+              punchy styling, vivid texture, and energy built for social.</p>
+            <div class="case-footer">
+              <span class="case-badge">Product Launch</span>
+              <span class="case-client">Yanga Beauty</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <a class="video-wrap" href="https://www.instagram.com/reel/DOOOvRziL8S/" target="_blank" rel="noopener"
+            aria-label="Watch Gloss Pop on Instagram">
+            <img src="thumb-gloss.jpg" alt="CPD Champion Creations — compact powder product shoot">
+            <div class="video-overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <span class="play-label">Watch on Instagram</span>
+            </div>
+          </a>
+          <div class="case-body">
+            <div class="case-meta">
+              <h2 class="case-title">Gloss Pop</h2>
+              <span class="case-date">2024</span>
+            </div>
+            <p class="case-desc">Bold, punchy, and playful — a product video for CPD's Gloss Pop that's built for the
+              scroll-stop moment on social.</p>
+            <div class="case-footer">
+              <span class="case-badge">Commercial</span>
+              <span class="case-client">CPD</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <a class="video-wrap" href="https://www.instagram.com/reel/DOn8YBoiGGj/" target="_blank" rel="noopener"
+            aria-label="Watch Beguile by Omaa Goddess Perfume fragrance launch on Instagram">
+            <img src="thumb-goddess.jpg" alt="Beguile by Omaa — Goddess Eau de Parfum fragrance launch film">
+            <div class="video-overlay">
+              <div class="play-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <span class="play-label">Watch on Instagram</span>
+            </div>
+          </a>
+          <div class="case-body">
+            <div class="case-meta">
+              <h2 class="case-title">Goddess Perfume</h2>
+              <span class="case-date">2025</span>
+            </div>
+            <p class="case-desc">Cinematic and atmospheric — a fragrance launch film for Beguile by Omaa that leans into
+              mystery, sensuality, and the invisible feeling a scent evokes.</p>
+            <div class="case-footer">
+              <span class="case-badge">Fragrance Launch</span>
+              <span class="case-client">Beguile by Omaa</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <p class="section-label">About</p>
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <img src="tina.jpg" alt="Tina Awodola — Videographer" class="about-photo">
+          <div class="about-photo-accent"></div>
+        </div>
+        <div class="about-text">
+          <h2 class="about-name">Tina Awodola</h2>
+          <p class="about-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+            London, UK
+          </p>
+          <p class="about-bio">I'm a London-based videographer specialising in beauty and lifestyle content. I create
+            films that feel intimate, intentional, and visually rich, the kind that stop the scroll and move product.
+          </p>
+          <p class="about-bio-2">From studio shoots and on-set commercials to skincare launches, PR campaigns, and
+            lifestyle content, I bring the same cinematic eye to every brief. Every brand has a world worth stepping
+            into. My job is to find it, light it beautifully, and put it on screen.</p>
+          <div class="about-tags">
+            <span class="about-tag">Product Launches</span>
+            <span class="about-tag">Skincare</span>
+            <span class="about-tag">Brand Films</span>
+            <span class="about-tag">On-Set Commercials</span>
+            <span class="about-tag">Studio Shoots</span>
+            <span class="about-tag">Lifestyle</span>
+            <span class="about-tag">PR Campaigns</span>
+            <span class="about-tag">Social Content</span>
+            <span class="about-tag">Fragrance</span>
+            <span class="about-tag">Beauty</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-grid">
+        <div>
+          <p class="section-label" style="color: #c08898;">Get in touch</p>
+          <h2 class="contact-heading">Let's make<br><em>something beautiful</em></h2>
+          <p class="contact-sub">Available for new projects. Reach out to discuss your brief.</p>
+        </div>
+        <div class="contact-btns">
+          <a href="mailto:cawodola@gmail.com" class="btn-primary">
+            ✉&nbsp;&nbsp;cawodola@gmail.com
+          </a>
+          <a href="https://www.instagram.com/tinaawodola" target="_blank" rel="noopener" class="btn-outline">
+            ♡&nbsp;&nbsp;@tinaawodola on Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Tina Awodola</span>
+      <span class="footer-loc">London, UK · 2025</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
